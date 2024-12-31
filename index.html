@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>treefds's homepage</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Custom CSS Style-->
+        <link href="static/css/primary.css" rel="stylesheet">
+        <!-- Extra CSS Style-->
+        <style>
+            .banner {
+                width: 100%;
+                height: 25vh;
+                max-height: 300px;
+                overflow: hidden;
+            }
+            .banner-img {
+                width: 100%;
+                object-fit: cover;
+            }
+            
+            .thumbnail-container {
+                background-color: rgba(0, 0, 0, 1);
+            }
+            .thumbnail-container:hover img {
+                opacity: 0.7; /* Darkens the image slightly on hover */
+                transition: opacity 0.15s ease-in-out;
+            }
+
+            .subtitle-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0); /* Semi-transparent black background */
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+                opacity: 0;
+                transition: opacity 0.15s ease-in-out;
+            }
+
+            .thumbnail-container:hover .subtitle-overlay {
+                opacity: 1; /* Shows the subtitle on hover */
+            }
+
+            .youtube-button {
+                opacity: 0;
+                transition: opacity 0.15s ease-in-out;
+            }
+
+            .thumbnail-container:hover .youtube-button {
+                opacity: 1;
+            }
+
+            .thumbnail-container:hover .youtube-button:hover {
+                opacity: 0.8;
+            }
+
+            .decorative-line {
+                width: 100%; 
+                height: 1px; 
+                background-color: #666; 
+            }
+
+            .profile-img {
+                width: 160px;
+                height: 160px;
+                object-fit: cover;
+                border-radius: 50%; /*circ*/
+                margin-right: 20px;
+            }
+
+            .about-me-panel {
+                display: flex;
+                align-items: center;
+                border: 1px solid #ccc;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #ffffff;
+            }
+            .modal-body {
+                text-align: center; 
+            }
+            .modal-body p {
+                text-align: left; 
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    treefds's Page
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Banner -->
+
+        <div class="banner shadow mb-4">
+            <img src="static/banner.png" alt="Banner" class="banner-img">
+        </div>
+
+        <!-- Main Canvas -->
+        <div class="container mb-5">
+            <div class="col-md-10 offset-md-1">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="m-2">About me</h3>
+                </div>
+                <!-- About me-->
+                <div class="container">
+                    <div class="about-me-panel">
+                        <img src="https://avatars.githubusercontent.com/u/104333993?v=4" alt="treefds" class="profile-img"> <!-- Replace with your image -->
+                        <div>
+                            <h5>Runkun Chen / treefds
+                                <a href="https://www.github.com/treefds" class="px-1"><i class="bi bi-github" title="Github"></i></a>
+                                <a href="https://zenkfds.itch.io">
+                                    <i class="bi bi-box-arrow-up-right" title="itch.io"></i>
+                                </a>
+                            </h5>
+                            <p>
+                                Undergraduate student at SJTU, majoring in Artificial Intelligence, mainly interested in LLM/MARL; also worked on generation-related tasks at internship.<br>
+                            </p>
+                            <p>Also an amateur indie game dev. Check out my works below! <br>(P.S. I hand-draw all graphics <strong>without</strong> genAI in my games.)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="m-2">Game Portfolio</h3>
+                </div>
+                <div class="decorative-line shadow mu-1 md-1"></div>
+                <div class="overflow-auto d-flex justify-content-left align-items-center">
+                    <!--{% for entry in video_entries %}-->
+                        <!-- Video Thumbnail -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-ld55" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow m-3 thumbnail-container">
+                                <div class="img-fluid" style="width: 100%; height: 100%; max-width: 500px; aspect-ratio: 16 / 9; object-fit: cover; text-align: center;">
+                                    <img src="static/img/thumb-ld55.png" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; ">
+                                    <div class="subtitle-overlay">A Wizard's Spring Hike</div>
+                                </div>
+                            </div>      
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="EntryModal-ld55" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">A Wizard's Spring Hike</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <p>[<a href="https://zenkfds.itch.io/spring-hike">Play Online!</a>] [<a href="https://github.com/treefds/WizardExpedition">Github Repo</a>]</p>
+                                        <p><strong>Made in 72 hours for <a href="https://ldjam.com/events/ludum-dare/55/a-wizards-spring-hike">Ludum Dare 55</a> &quot;Summoning&quot; (April 2024)</strong>. Developed independently with Godot 4, featuring original game designs, art &amp; code.</p>
+                                        <p>In this <em>Sokoban</em>-inspired puzzle game, the player controls the <em>Wizard</em> to put together materials and summon golems to push obstacles, press switches and navigate through the garden labyrinth.</p>
+                                        <h5 id="screenshots">Screenshots</h5>
+                                        <img src="https://img.itch.zone/aW1nLzE1Nzg3MjQ4LnBuZw==/original/ZcRb0k.png" class="m-2" alt="Screenshot" style="width: 80%; height: 80%; object-fit: cover;">
+                                        <img src="static/img/ld55-take3.png" class="m-2" alt="Screenshot" style="width: 80%; height: 80%; object-fit: cover;">
+                                        <img src="static/img/ld55-take2.png" class="m-2" alt="Screenshot" style="width: 80%; height: 80%; object-fit: cover;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- LD56 -->
+                        <!-- Video Thumbnail -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-ld56" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow m-3 thumbnail-container">
+                                <div class="img-fluid" style="width: 100%; height: 100%; max-width: 500px; aspect-ratio: 16 / 9; object-fit: cover; text-align: center;">
+                                    <img src="static/img/thumb-ld56.png" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; ">
+                                    <div class="subtitle-overlay">Scrapside Picnic</div>
+                                </div>
+                            </div>      
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="EntryModal-ld56" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Scrapside Picnic</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>[<a href="https://zenkfds.itch.io/scrapside-picnic">Play Online!</a>]</p>
+                                        <p><strong>Made in 72 hours for <a href="https://ldjam.com/events/ludum-dare/56/scrapside-picnic/">Ludum Dare 56</a> &quot;Tiny Creatures&quot; (Oct 2024)</strong>. Developed independently with Godot 4, featuring original game designs, art &amp; code.</p>
+                                        <p>A 2D exploration-puzzle platformer game about <em>very-tiny</em> alien visitors stranded on planet Earth. Explore an out-of-scale picnic site, where soda cans contain lethal liquid and sparrows become giant monsters.</p>
+                                        <p>The gameplay is influenced by the <em>Metroidvania</em> genre, while the narrative is a twist on the science fiction novel <em>Roadside Picnic</em>.</p>
+                                        <h5 id="screenshots">Screenshots</h5>
+                                        <img src="https://static.jam.host/raw/f18/25/z/678fe.png" alt="Screenshot" class="m-2" style="width: 80%; height: 80%; object-fit: cover;">
+                                        <img src="https://static.jam.host/raw/f18/25/z/67902.png" alt="Screenshot" class="m-2" style="width: 80%; height: 80%; object-fit: cover;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- Course -->
+                        <!-- Video Thumbnail -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-unity" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow m-3 thumbnail-container">
+                                <div class="img-fluid" style="width: 100%; height: 100%; max-width: 500px; aspect-ratio: 16 / 9; object-fit: cover; text-align: center;">
+                                    <img src="static/img/thumb-unity.png" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; ">
+                                    <div class="subtitle-overlay">Hearthfront</div>
+                                </div>
+                            </div>      
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="EntryModal-unity" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Hearthfront</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>Course project for CS1119-01 &quot;Tencent Game Program Design and Case Study&quot; (Sept–Dec 2024)</strong>. Co-developed with Zeyi Zheng and Zhe Su. I worked as the main designer, programmer and artist.</p>
+                                        <p>A precise puzzle game featuring two core game mechanics: Time Rewind and Ghost Possession. (Think <em>Braid</em> and <em>Ghost Trick: Phantom Detective</em>, played out in a <em>Baba Is You</em> fashion!) The player controls a ghost to move between and manipulate objects through the timeline to progress the game.</p>
+                                        <p>The game is created as a course project and is unpublished as of yet.</p>
+                                        <h5 id="screenshots">Screenshots</h5>
+                                        <img src="static/img/unity-take1.png" alt="Screenshot" class="m-2" style="width: 80%; height: 80%; object-fit: cover;">
+                                        <img src="static/img/unity-take2.png" alt="Screenshot" class="m-2" style="width: 80%; height: 80%; object-fit: cover;">
+                                        <img src="static/img/unity-take3.png" alt="Screenshot" class="m-2" style="width: 80%; height: 80%; object-fit: cover;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- Other works -->
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="m-2">Other Works</h3>
+                </div>
+                <div class="decorative-line shadow mu-1 md-1"></div>
+                <div class="overflow-auto d-flex justify-content-left align-items-center">
+                    <!--{% for entry in video_entries %}-->
+                        <!-- Video Thumbnail -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center">
+                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-page" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow m-3 thumbnail-container">
+                                <div class="img-fluid" style="width: 100%; height: 100%; max-width: 500px; aspect-ratio: 16 / 9; object-fit: cover; text-align: center;">
+                                    <img src="static/img/thumb-page.png" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; ">
+                                    <div class="subtitle-overlay">Web Design &amp; Code Projects</div>
+                                </div>
+                            </div>      
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="EntryModal-page" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Web Design (and other Code Projects)</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>The web page <em>you are reading right now </em> is designed by me, using HTML/CSS and Bootstrap.</p>
+                                        <p>The design is repurposed from another personal project called <em>Matomō</em>, a video collection site devloped in Python Django. The service is currently offline but <a href="https://github.com/treefds/matomou">source code</a> is available.</p>
+                                        <p>Codes for my other projects are also available in my GitHub repositories.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+
+                <!-- Experiences -->
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="m-2">Research experience</h3>
+                </div>
+                <div class="decorative-line shadow mu-1 md-1"></div>
+                <div class="m-4">
+                    <ul>
+                        <li><em>Nov 2024 – present</em>: MARL research group, SJTU
+                            <ul>
+                                <li>Graduate design advised by Associate Professor Ying Wen</li>
+                                <li><b>MARL/LLM for data science</b></li>
+                            </ul>
+                        </li>
+                        <li><em>Apr 2024 – Jan 2025</em>: Digital Human Dept., 01.AI
+                            <ul>
+                                <li>Research intern advised by Dr. Minglei Li</li>
+                                <li><b>Face generation, talking head animation</b></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- another list? -->
+        </div>
+        <footer class="bg-dark text-white py-3">
+            <div class="container text-center">
+                <p>(2024) treefds</p>
+            </div>
+        </footer>
+    
+    <!-- Bootstrap Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
