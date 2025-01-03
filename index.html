@@ -6,160 +6,115 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>treefds's homepage</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  
 
         <!-- Custom CSS Style-->
         <link href="static/css/primary.css" rel="stylesheet">
         <!-- Extra CSS Style-->
         <style>
-            .banner {
-                width: 100%;
-                height: 25vh;
-                max-height: 300px;
-                overflow: hidden;
-            }
-            .banner-img {
-                width: 100%;
-                object-fit: cover;
-            }
             
-            .thumbnail-container {
-                background-color: rgba(0, 0, 0, 1);
-            }
-            .thumbnail-container:hover img {
-                opacity: 0.7; /* Darkens the image slightly on hover */
-                transition: opacity 0.15s ease-in-out;
-            }
-
-            .subtitle-overlay {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: rgba(0, 0, 0, 0); /* Semi-transparent black background */
-                color: #fff;
-                text-align: center;
-                padding: 10px;
-                opacity: 0;
-                transition: opacity 0.15s ease-in-out;
-            }
-
-            .thumbnail-container:hover .subtitle-overlay {
-                opacity: 1; /* Shows the subtitle on hover */
-            }
-
-            .youtube-button {
-                opacity: 0;
-                transition: opacity 0.15s ease-in-out;
-            }
-
-            .thumbnail-container:hover .youtube-button {
-                opacity: 1;
-            }
-
-            .thumbnail-container:hover .youtube-button:hover {
-                opacity: 0.8;
-            }
-
-            .decorative-line {
-                width: 100%; 
-                height: 1px; 
-                background-color: #666; 
-            }
-
-            .profile-img {
-                width: 160px;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 50%; /*circ*/
-                margin-right: 20px;
-            }
-
-            .about-me-panel {
-                display: flex;
-                align-items: center;
-                border: 1px solid #ccc;
-                padding: 20px;
-                border-radius: 10px;
-                background-color: #ffffff;
-            }
-            .modal-body {
-                text-align: center; 
-            }
-            .modal-body p {
-                text-align: left; 
-            }
 
         </style>
     </head>
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    treefds's Page
+        <nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top">
+            <div class="container m-0"> 
+                <a class="navbar-brand logo-brand" href="#">
+                    <img src="static/img/avatar-alt.png" alt="treefds" class="logo-img">
+                    rkchen
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                </button> -->
+                <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+                    <!-- <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </nav>
-        <!-- Banner -->
-
-        <div class="banner shadow mb-4">
-            <img src="static/banner.png" alt="Banner" class="banner-img">
-        </div>
-
-        <!-- Main Canvas -->
-        <div class="container mb-5">
-            <div class="col-md-10 offset-md-1">
-                <div class="d-flex align-items-center justify-content-between">
-                    <h3 class="m-2">About me</h3>
+        <!-- Sidebar -->
+        <div class="sidebar container" style="padding-top: 100px; ">
+            <div class="row align-items-end ps-3">
+                <img src="https://avatars.githubusercontent.com/u/104333993?v=4" alt="treefds" class="profile-img col-lg-12 col-xl-6">
+                <div class="eras-heavy col-lg-12 col-xl-6">
+                    <p>
+                        <strong>Runkun Chen</strong><br>@treefds
+                    </p>
                 </div>
-                <!-- About me-->
-                <div class="container">
-                    <div class="about-me-panel">
-                        <img src="https://avatars.githubusercontent.com/u/104333993?v=4" alt="treefds" class="profile-img"> <!-- Replace with your image -->
-                        <div>
-                            <h5>Runkun Chen / treefds
-                                <a href="https://www.github.com/treefds" class="px-1"><i class="bi bi-github" title="Github"></i></a>
-                                <a href="https://zenkfds.itch.io">
-                                    <i class="bi bi-box-arrow-up-right" title="itch.io"></i>
-                                </a>
-                            </h5>
+            </div>
+            <div class="mt-2 eras"><!-- Bio -->
+                <p class="mx-3 short-bio">
+                    Undergraduate student, <br>AI research &amp; indie game dev.
+                </p>
+                <div class="mx-3 list-info mb-auto">
+                    <p><i class="fas fa-home" title="Location"></i> Shanghai, China<br>
+                       <i class="fas fa-university" title="University"></i> SJTU (AI major)<br>
+                       <a href="https://www.github.com/treefds"><i class="fas bi-github"></i> GitHub</a></p>
+                </div>
+            </div>
+            <div class="mt-auto mx-3 my-5">
+                <p class="py-1">
+                    <a class="eras-index" href="#works">Works</a>
+                </p>
+                <p class="py-1">
+                    <a class="eras-index" href="#about">About</a>
+                </p>
+                <p class="py-1">
+                    <a class="eras-index" href="#">Contact</a>
+                </p>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 56px;">
+            <!-- Main Canvas -->
+            <div class="offset-md-3 offset-sm-0 col-md-9 container mb-5" style="background-color: #ffffff; ">
+                <div class="pt-5 pb-5">
+                </div>
+                <div class="mt-5 mb-5 bio">
+                </div>
+                <div class="bio">
+                    <div class="row align-items-end ps-3">
+                        <img src="https://avatars.githubusercontent.com/u/104333993?v=4" alt="treefds" class="profile-img-mini col-4">
+                        <div class="eras-heavy col-4">
                             <p>
-                                Undergraduate student at SJTU, majoring in Artificial Intelligence, mainly interested in LLM/MARL; also worked on generation-related tasks at internship.<br>
+                                <strong>Runkun Chen</strong><br>@treefds
                             </p>
-                            <p>Also an amateur indie game dev. Check out my works below! <br>(P.S. I hand-draw all graphics <strong>without</strong> genAI in my games.)</p>
                         </div>
                     </div>
+                    <div class="mt-2 eras"><!-- Bio -->
+                        <p class="mx-3 short-bio">
+                            Undergraduate student, AI research &amp; indie game dev.
+                        </p>
+                    </div>
                 </div>
+
                 <div class="d-flex align-items-center justify-content-between">
-                    <h3 class="m-2">Game Portfolio</h3>
+                    <h5 class="m-2 rounded" id="works">Game Portfolio</h5>
                 </div>
-                <div class="decorative-line shadow mu-1 md-1"></div>
-                <div class="overflow-auto d-flex justify-content-left align-items-center">
+
+                <div class="overflow-auto d-flex justify-content-left align-items-center mb-4">
                     <!--{% for entry in video_entries %}-->
                         <!-- Video Thumbnail -->
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center">
-                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-ld55" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow m-3 thumbnail-container">
-                                <div class="img-fluid" style="width: 100%; height: 100%; max-width: 500px; aspect-ratio: 16 / 9; object-fit: cover; text-align: center;">
+                        <div class="col-9 col-sm-9 col-md-5 col-lg-5 d-flex justify-content-center">
+                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-ld55" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow thumbnail-container">
+                                <div class="img-fluid" style="width: 100%; height: 100%; aspect-ratio: 12 / 9; object-fit: cover; text-align: center;">
                                     <img src="static/img/thumb-ld55.png" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; ">
                                     <div class="subtitle-overlay">A Wizard's Spring Hike</div>
                                 </div>
                             </div>      
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="EntryModal-ld55" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade eras" id="EntryModal-ld55" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">A Wizard's Spring Hike</h5>
+                                        <h5 class="modal-title eras-title" id="exampleModalLabel">A Wizard's Spring Hike</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
@@ -177,16 +132,16 @@
                         </div>
                     <!-- LD56 -->
                         <!-- Video Thumbnail -->
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center">
-                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-ld56" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow m-3 thumbnail-container">
-                                <div class="img-fluid" style="width: 100%; height: 100%; max-width: 500px; aspect-ratio: 16 / 9; object-fit: cover; text-align: center;">
+                        <div class="col-9 col-sm-9 col-md-5 col-lg-5 d-flex justify-content-center">
+                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-ld56" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow thumbnail-container">
+                                <div class="img-fluid" style="width: 100%; height: 100%; aspect-ratio: 12 / 9; object-fit: cover; text-align: center;">
                                     <img src="static/img/thumb-ld56.png" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; ">
                                     <div class="subtitle-overlay">Scrapside Picnic</div>
                                 </div>
                             </div>      
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="EntryModal-ld56" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade eras" id="EntryModal-ld56" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -207,16 +162,16 @@
                         </div>
                     <!-- Course -->
                         <!-- Video Thumbnail -->
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center">
-                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-unity" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow m-3 thumbnail-container">
-                                <div class="img-fluid" style="width: 100%; height: 100%; max-width: 500px; aspect-ratio: 16 / 9; object-fit: cover; text-align: center;">
+                        <div class="col-9 col-sm-9 col-md-5 col-lg-5 d-flex justify-content-center">
+                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-unity" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow thumbnail-container">
+                                <div class="img-fluid" style="width: 100%; height: 100%; aspect-ratio: 12 / 9; object-fit: cover; text-align: center;">
                                     <img src="static/img/thumb-unity.png" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; ">
                                     <div class="subtitle-overlay">Hearthfront</div>
                                 </div>
                             </div>      
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="EntryModal-unity" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade eras" id="EntryModal-unity" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -238,22 +193,21 @@
                 </div>
                 <!-- Other works -->
                 <div class="d-flex align-items-center justify-content-between">
-                    <h3 class="m-2">Other Works</h3>
+                    <h5 class="m-2 rounded">Other Works</h5>
                 </div>
-                <div class="decorative-line shadow mu-1 md-1"></div>
-                <div class="overflow-auto d-flex justify-content-left align-items-center">
+                <div class="overflow-auto d-flex justify-content-left align-items-center mb-4">
                     <!--{% for entry in video_entries %}-->
                         <!-- Video Thumbnail -->
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center">
-                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-page" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow m-3 thumbnail-container">
-                                <div class="img-fluid" style="width: 100%; height: 100%; max-width: 500px; aspect-ratio: 16 / 9; object-fit: cover; text-align: center;">
+                        <div class="col-9 col-sm-9 col-md-5 col-lg-5 d-flex justify-content-center">
+                            <div data-bs-toggle="modal" data-bs-target="#EntryModal-page" style="cursor: pointer;" class="position-relative d-block overflow-hidden shadow thumbnail-container">
+                                <div class="img-fluid" style="width: 100%; height: 100%; aspect-ratio: 12 / 9; object-fit: cover; text-align: center;">
                                     <img src="static/img/thumb-page.png" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; ">
                                     <div class="subtitle-overlay">Web Design &amp; Code Projects</div>
                                 </div>
                             </div>      
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="EntryModal-page" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade eras" id="EntryModal-page" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -262,7 +216,6 @@
                                     </div>
                                     <div class="modal-body">
                                         <p>The web page <em>you are reading right now </em> is designed by me, using HTML/CSS and Bootstrap.</p>
-                                        <p>The design is repurposed from another personal project called <em>Matomō</em>, a video collection site devloped in Python Django. The service is currently offline but <a href="https://github.com/treefds/matomou">source code</a> is available.</p>
                                         <p>Codes for my other projects are also available in my GitHub repositories.</p>
                                     </div>
                                 </div>
@@ -270,35 +223,40 @@
                         </div>
                 </div>
 
-
-                <!-- Experiences -->
+                <!-- About me-->
                 <div class="d-flex align-items-center justify-content-between">
-                    <h3 class="m-2">Research experience</h3>
+                    <h5 class="m-2 rounded" id="about">About</h5>
                 </div>
-                <div class="decorative-line shadow mu-1 md-1"></div>
-                <div class="m-4">
-                    <ul>
-                        <li><em>Nov 2024 – present</em>: MARL research group, SJTU
-                            <ul>
-                                <li>Graduate design advised by Associate Professor Ying Wen</li>
-                                <li><b>MARL/LLM for data science</b></li>
-                            </ul>
-                        </li>
-                        <li><em>Apr 2024 – Jan 2025</em>: Digital Human Dept., 01.AI
-                            <ul>
-                                <li>Research intern advised by Dr. Minglei Li</li>
-                                <li><b>Face generation, talking head animation</b></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                <div class="container">
+                    <div class="mx-4 col-9">
+                        <p>
+                            <strong>Runkun Chen</strong> is an undergraduate student from Shanghai Jiao Tong Unviersity, majoring in Artificial Intelligence. His research interest includes MARL/LLM, among other fields.
+                        </p>
+                        <p>
+                            Outside of research, he is also an indie game developer. You can read about his works <a href="#works">above</a>, or play them at <a href="https://zenkfds.itch.io">itch.io</a>.
+                        </p>
+                        <h6>Work history</h6>
+                        <ul>
+                            <li><em>Nov 2024 – present</em>: MARL research group, SJTU
+                                <ul>
+                                    <li>Graduate design advised by Associate Professor Ying Wen</li>
+                                    <li><b>MARL/LLM for data science</b></li>
+                                </ul>
+                            </li>
+                            <li><em>Apr 2024 – Jan 2025</em>: Digital Human Dept., 01.AI
+                                <ul>
+                                    <li>Research intern advised by Dr. Minglei Li</li>
+                                    <li><b>Face generation, talking head animation</b></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
             </div>
-            
-            <!-- another list? -->
         </div>
-        <footer class="bg-dark text-white py-3">
+        <footer class="bg-white text-dark py-3">
             <div class="container text-center">
-                <p>(2024) treefds</p>
+                <p>(2025) treefds</p>
             </div>
         </footer>
     
