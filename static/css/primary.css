@@ -199,7 +199,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 25vw;
+    /* width: 25vw; */
     height: 100vh;
     background-color: #ffffff;
     display: flex;
@@ -207,17 +207,17 @@
     z-index: 1000;
 }
 
-@media screen and (max-width: 1250px) {
+/* @media screen and (max-width: 992px) {
     .sidebar {
         display: none;
     }
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 992px) {
     .bio {
         display: none;
     }
-}
+} */
 
 .profile-img-mini {
     width: 24%;
