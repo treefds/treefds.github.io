@@ -102,7 +102,7 @@
 }
 
 .profile-img {
-    width: 40%;
+    width: 50%;
     height: auto;
     object-fit: cover;
     border-radius: 50%; /*circ*/
@@ -132,26 +132,26 @@
 
 /* new */
 .body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
 }
 
 .eras {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
 }
 
 .eras-heavy {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 400;
     font-size: 12pt;
 }
 
 .eras-title {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 600;
 }
 
 .eras-index {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 300;
     font-size: 13pt;
     color: #6f6f6f;
@@ -163,7 +163,7 @@
 }
 
 .rounded {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: 'Mulish', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 20pt;
     color:#303030;
