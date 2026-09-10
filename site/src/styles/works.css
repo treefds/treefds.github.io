@@ -1,0 +1,484 @@
+.intro--works .intro-content {
+  padding-top: clamp(90px, 13vh, 155px);
+}
+.intro--works h1 {
+  font-size: clamp(60px, 6.5vw, 92px);
+}
+.intro--works .intro-description {
+  max-width: 430px;
+}
+.boat {
+  position: absolute;
+  --boat-width: min(360px, 48vw);
+  left: calc(50% - var(--boat-width) * 7 / 300);
+  bottom: -8px;
+  width: var(--boat-width);
+  aspect-ratio: 300 / 230;
+  pointer-events: none;
+}
+.boat img {
+  width: 100%;
+  height: 100%;
+}
+.phase-entering .boat {
+  animation: boat-arrival 650ms ease-out both;
+}
+.phase-leaving .boat {
+  transform: translateX(250px);
+  transition: transform 320ms ease-in;
+}
+.games-content {
+  --game-gutter: min(9vw, 129.6px);
+  max-width: 1440px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+  padding: 65px var(--game-gutter) 125px;
+}
+.fishing-line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+.fishing-line path {
+  fill: none;
+  stroke: #ecdbc0;
+  stroke-width: 1.5;
+  opacity: 0.7;
+}
+.fishing-line g path {
+  stroke-width: 3;
+  opacity: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.game-row {
+  position: relative;
+  transition: height 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  overflow-anchor: none;
+}
+.game-row-content {
+  min-height: 335px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  column-gap: 10%;
+  padding-top: 15px;
+}
+.game-row:nth-of-type(even) .fish-group {
+  grid-column: 2;
+  justify-self: start;
+}
+.game-row:nth-of-type(even) .project-bubbles {
+  grid-column: 1;
+  grid-row: 1;
+}
+.fish-group {
+  /* Grow toward the outside, preserving the central channel; fit small screens. */
+  width: min(120%, calc(100% + var(--game-gutter)));
+  max-width: 432px;
+  justify-self: end;
+  position: relative;
+  z-index: 4;
+}
+.fish {
+  display: block;
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 0;
+  border-radius: 35%;
+  transform: translateX(var(--catch-offset, 0px));
+  transition: transform 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.fish-illustration {
+  display: block;
+  position: relative;
+}
+.fish-art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.fish:hover .fish-art,
+.fish:focus-visible .fish-art {
+  filter: drop-shadow(0 0 3px #ffffff90);
+}
+.fish-caption {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 18px 3px 0 40px;
+}
+.catch-number {
+  font-size: 12px;
+  color: #aad1dc;
+  align-self: flex-start;
+  padding-top: 5px;
+}
+.fish-caption h2 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+}
+.fish-caption p {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #c1dce5;
+}
+.project-bubbles {
+  position: relative;
+  margin-top: 0;
+  padding-bottom: 35px;
+  animation: bubble-in 350ms cubic-bezier(0.2, 0.8, 0.3, 1.15) both;
+  transform-origin: 0 40%;
+}
+.project-bubbles.is-popping {
+  animation: bubble-out 180ms ease-in both;
+}
+/* SVG backdrops stretch with accessible HTML content; only artwork is mirrored. */
+.bubble-surface {
+  position: relative;
+  isolation: isolate;
+}
+.bubble-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--bubble-art) center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+/* Keep a consistent text inset inside the curved SVG, including mirrored bubbles. */
+.description-bubble {
+  color: #183a47;
+  --bubble-art: url('../../public/assets/bubble-description.svg');
+  padding: 3rem 10% 3rem 14%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  overflow-wrap: anywhere;
+}
+.description-bubble .eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  color: #617577;
+  text-wrap: balance;
+}
+.description-bubble h3 {
+  font-size: 1.625rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0;
+  font-weight: 500;
+  text-wrap: balance;
+}
+.description-bubble > p:last-child {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+.screenshot-bubble {
+  width: 65%;
+  margin: 16px 0 0 -20px;
+  padding: 20px 22px 16px;
+  --bubble-art: url('../../public/assets/bubble-screenshot.svg');
+}
+.screenshot-gallery {
+  position: relative;
+  aspect-ratio: 1.6;
+  border-radius: 15px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+.gallery-slide.is-active {
+  opacity: 1;
+}
+.gallery-controls {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: flex;
+  border-radius: 8px;
+  background: #183a47e6;
+}
+.gallery-controls button {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+}
+.gallery-controls button:focus-visible {
+  outline-offset: -3px;
+}
+.gallery-controls button:hover {
+  background: #ffffff25;
+}
+.link-bubbles {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  display: flex;
+  gap: 9px;
+}
+.link-bubbles a {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+  --bubble-art: url('../../public/assets/bubble-link.svg');
+  color: #254650;
+  width: 57px;
+  height: 61px;
+  text-decoration: none;
+  font-size: 10px;
+}
+.link-bubbles a > span:first-child {
+  font-size: 19px;
+  font-weight: 700;
+}
+.link-bubbles a:hover::before {
+  filter: brightness(1.07);
+}
+.little-bubble {
+  position: absolute;
+  width: 18px;
+  height: 15px;
+  transform: rotate(-14deg);
+  background: url('../../public/assets/bubble-small.svg') center / 100% 100%
+    no-repeat;
+  top: 160px;
+  left: -24px;
+}
+.little-bubble--two {
+  width: 10px;
+  height: 8px;
+  background-image: url('../../public/assets/bubble-tiny.svg');
+  transform: rotate(18deg);
+  top: 180px;
+  left: -43px;
+}
+/* The icons protrude above the seabed into the games content's bottom padding. */
+.seabed--playful {
+  z-index: 3;
+}
+.seabed--playful::before {
+  pointer-events: none;
+}
+.treasures {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 80px;
+  margin-top: -132px;
+  margin-bottom: 48px;
+  position: relative;
+}
+.treasures a {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  font-size: 13px;
+  gap: 10px;
+}
+.treasures img {
+  width: 100px;
+  height: 90px;
+  object-fit: contain;
+}
+.treasures a:nth-child(3) img {
+  width: 65px;
+}
+.treasures a:hover span {
+  text-decoration: underline;
+}
+.phase-entering .fish-group {
+  animation: fish-arrival 600ms ease-out both;
+}
+@keyframes boat-arrival {
+  from {
+    transform: translateX(200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes fish-arrival {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bubble-out {
+  to {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+.game-row:nth-of-type(even) .project-bubbles {
+  transform-origin: 100% 40%;
+}
+.game-row:nth-of-type(even) .bubble-surface::before {
+  transform: scaleX(-1);
+}
+.game-row:nth-of-type(even) .screenshot-bubble {
+  margin: 16px -20px 0 auto;
+}
+.game-row:nth-of-type(even) .link-bubbles {
+  right: auto;
+  left: 0;
+  flex-direction: row-reverse;
+}
+.game-row:nth-of-type(even) .little-bubble {
+  left: auto;
+  right: -24px;
+}
+.game-row:nth-of-type(even) .little-bubble--two {
+  right: -43px;
+}
+@media (max-width: 900px) {
+  .games-content {
+    --game-gutter: 7vw;
+    padding-inline: var(--game-gutter);
+  }
+  .link-bubbles {
+    bottom: 13px;
+  }
+}
+@media (max-width: 600px) {
+  .intro--works {
+    min-height: max(730px, calc(100svh - 20px));
+  }
+  .intro--works .intro-content {
+    padding-top: 68px;
+  }
+  .intro--works h1 {
+    font-size: 57px;
+  }
+  .intro--works .intro-description {
+    max-width: 320px;
+  }
+  .intro--works .dive-cue {
+    bottom: 75px;
+    max-width: 130px;
+    line-height: 1.6;
+  }
+  .intro--works .dive-cue > span {
+    flex-shrink: 0;
+  }
+  .games-content {
+    padding-top: 45px;
+    padding-bottom: 145px;
+  }
+  .project-bubbles {
+    width: 89%;
+    align-self: flex-end;
+    margin-top: 22px;
+    padding-bottom: 45px;
+  }
+  .little-bubble {
+    top: -10px;
+    left: 23px;
+  }
+  .little-bubble--two {
+    top: -23px;
+    left: 10px;
+  }
+  .screenshot-bubble {
+    margin-left: -18px;
+  }
+  .link-bubbles {
+    bottom: 53px;
+  }
+  .treasures {
+    gap: 35px;
+  }
+  .treasures img {
+    width: 80px;
+  }
+  .treasures a:nth-child(3) img {
+    width: 45px;
+  }
+  .game-row-content {
+    min-height: 250px;
+    column-gap: 16%;
+    padding-top: 10px;
+  }
+  .fish-caption {
+    /* Fish artwork extends into the gutter; keep its text safely inset. */
+    margin: 12px 0 0 var(--game-gutter);
+    gap: 6px;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
+  .game-row:nth-of-type(even) .fish-caption {
+    margin-inline: 0 var(--game-gutter);
+  }
+  .fish-caption > div {
+    min-width: 0;
+  }
+  .fish-caption h2 {
+    font-size: 17px;
+  }
+  .fish-caption p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .catch-number {
+    display: none;
+  }
+  .game-row .project-bubbles,
+  .game-row:nth-of-type(even) .project-bubbles {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 89%;
+    justify-self: end;
+  }
+  .game-row:nth-of-type(even) .project-bubbles {
+    justify-self: start;
+  }
+  .game-row:nth-of-type(even) .little-bubble {
+    left: auto;
+    right: 23px;
+  }
+  .game-row:nth-of-type(even) .little-bubble--two {
+    right: 10px;
+  }
+}

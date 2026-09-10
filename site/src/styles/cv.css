@@ -1,0 +1,243 @@
+/* Keep the introduction and résumé aligned within one shared reading width. */
+.view-cv {
+  --cv-gutter: max(7vw, calc((100% - 880px) / 2));
+}
+.intro.intro--cv {
+  display: flex;
+  flex-direction: column;
+  min-height: max(560px, calc(100svh - 28px));
+  padding-inline: var(--cv-gutter);
+  color: #202629;
+}
+.intro--cv .navigation {
+  padding-top: 28px;
+}
+.intro--cv .home-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-decoration: none;
+}
+.intro--cv .intro-content {
+  flex: 1;
+  gap: 64px;
+  padding: 64px 0 120px;
+}
+.intro--cv .intro-text {
+  max-width: 560px;
+}
+.intro--cv h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+.academic-affiliation {
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #414c52;
+}
+.intro--cv .intro-description {
+  max-width: 560px;
+  margin-top: 22px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #414c52;
+}
+.intro--cv .intro-meta {
+  margin-top: 18px;
+  font-size: 0.875rem;
+}
+.intro--cv .portrait {
+  width: 175px;
+  margin: 0;
+  transform: none;
+}
+.intro--cv .portrait img {
+  width: 100%;
+  aspect-ratio: 0.9;
+  border-radius: 4px;
+}
+.intro--cv .dive-cue {
+  left: var(--cv-gutter);
+  bottom: 46px;
+}
+@media (max-width: 600px) {
+  .intro.intro--cv {
+    min-height: max(620px, calc(100svh - 20px));
+  }
+  .intro--cv .intro-content {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 40px 0 110px;
+  }
+  .intro--cv h1 {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+  }
+  .intro--cv .portrait {
+    width: 116px;
+    align-self: flex-start;
+  }
+}
+
+.resume-content {
+  padding: 90px var(--cv-gutter) 100px;
+}
+.resume-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 55px;
+  padding-block: 48px 55px;
+  border-top: 1px solid #ffffff30;
+}
+.resume-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.section-number {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #afced8;
+}
+.resume-heading h2 {
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: -0.6px;
+  line-height: 1.25;
+}
+.resume-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.entry-date {
+  color: #bbdbe5;
+  font-size: 11px;
+  letter-spacing: 1.7px;
+  margin-bottom: 10px;
+}
+.resume-entries h3 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.organization {
+  margin-top: 5px;
+  color: #d7e8ee;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.entry-description {
+  margin-top: 13px;
+  color: #c1dbe4;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 560px;
+}
+.skills-section .resume-entries {
+  gap: 12px;
+}
+.skills-section h3:not(:first-child) {
+  margin-top: 14px;
+}
+.skills-section .entry-description {
+  margin-top: 0;
+}
+.skill-list {
+  color: #c1dbe4;
+  font-size: 16px;
+  line-height: 2;
+}
+@media (max-width: 600px) {
+  .resume-content {
+    padding-block: 65px 80px;
+  }
+  .resume-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 32px 40px;
+  }
+  .resume-heading {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 15px;
+  }
+  .resume-heading h2 {
+    font-size: 26px;
+  }
+  .resume-entries h3 {
+    font-size: 19px;
+  }
+}
+
+.intro-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+  color: #414c52;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.intro-contacts a,
+.intro-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.intro-contacts a {
+  text-decoration: none;
+}
+.intro-contacts a:hover {
+  text-decoration: underline;
+}
+.intro-contacts img {
+  flex: 0 0 18px;
+}
+.intro-email {
+  flex-basis: 100%;
+}
+.intro-email span {
+  overflow-wrap: anywhere;
+}
+
+.intro--cv .intro-description a {
+  color: #226b7c;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.intro--cv .intro-description a:hover {
+  text-decoration-thickness: 2px;
+}
+.intro--cv .intro-description strong {
+  font-weight: 700;
+}
+
+.resume-entry a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.resume-entry a:hover {
+  text-decoration-thickness: 2px;
+}
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+.entry-description > p + p {
+  margin-top: 1em;
+}
