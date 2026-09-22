@@ -66,14 +66,15 @@ export function Resume() {
             <p className="skill-list">
               Python · C++ · Go · JavaScript · SQL
               <br />
-              PyTorch · Django · Godot · Unity  · LaTeX
+              PyTorch · Django · Godot · Unity · LaTeX
               <br />
               Proficient in Mandarin Chinese and English
             </p>
             <h3>Interests</h3>
             <p className="entry-description">
-              ML/AI for creative processes, linguistics and languages, computer graphics,
-              game development, animation and films, and bird watching.
+              ML/AI for creative processes, linguistics and languages, computer
+              graphics, game development, animation and films, and bird
+              watching.
             </p>
           </div>
         </section>

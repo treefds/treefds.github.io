@@ -53,7 +53,7 @@ export function Intro({
           )}
           {works ? (
             <p className="intro-description">
-              Independent games by {profile.name}.
+              Independent games by me!
             </p>
           ) : (
             // This HTML is authored in the repository, never taken from user input.
@@ -67,7 +67,11 @@ export function Intro({
         </div>
         {!works && (
           <figure className="portrait">
-            <img src="./assets/avatar.jpg" alt={`Avatar`} />
+            <img
+              src="./assets/avatar.jpg"
+              alt={`Portrait of ${profile.name}`}
+            />
+            <figcaption>{profile.avatarCaption || profile.name}</figcaption>
           </figure>
         )}
       </div>

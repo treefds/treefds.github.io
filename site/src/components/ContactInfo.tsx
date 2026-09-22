@@ -7,29 +7,35 @@ export function ContactInfo() {
     {
       platform: 'GitHub',
       icon: 'github',
-      handle: profile.githubHandle,
+      label: `@${profile.githubHandle}`,
       url: `https://github.com/${profile.githubHandle}`,
     },
     {
       platform: 'itch.io',
       icon: 'itch',
-      handle: profile.itchHandle,
+      label: `@${profile.itchHandle}`,
       url: `https://${profile.itchHandle}.itch.io`,
+    },
+    {
+      platform: 'LinkedIn',
+      icon: 'linkedin',
+      label: 'LinkedIn',
+      url: profile.linkedinUrl,
     },
   ];
 
   return (
     <ul className="intro-contacts" aria-label="Contact information">
-      {accounts.map(({ platform, icon, handle, url }) => (
+      {accounts.map(({ platform, icon, label, url }) => (
         <li key={platform}>
-          <a href={url} aria-label={`${platform}: ${handle}`}>
+          <a href={url} aria-label={`${platform}: ${label}`}>
             <img
               src={`./assets/contact/${icon}.svg`}
               alt=""
               width="18"
               height="18"
             />
-            <span>@{handle}</span>
+            <span>{label}</span>
           </a>
         </li>
       ))}

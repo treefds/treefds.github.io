@@ -54,6 +54,14 @@
   margin: 0;
   transform: none;
 }
+.intro--cv .portrait figcaption {
+  margin-top: 10px;
+  color: #52656d;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
 .intro--cv .portrait img {
   width: 100%;
   aspect-ratio: 0.9;

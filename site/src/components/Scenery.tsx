@@ -26,7 +26,11 @@ export function Seabed({ playful = false }: { playful?: boolean }) {
     <footer className={`seabed ${playful ? 'seabed--playful' : ''}`}>
       {playful && (
         <div className="treasures">
-          <a href="https://www.github.com/treefds" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.github.com/treefds"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="./assets/icon-github.png" alt="" />
             <span>GitHub</span>
           </a>

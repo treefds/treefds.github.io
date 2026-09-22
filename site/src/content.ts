@@ -7,9 +7,13 @@ export const profile = {
     <p>I am interested in exploring human creativity through both engineering and research. My current research is focused on applying ML/AI to creative processes, with a focus on <strong>agentic game development</strong>.I am also an indie game developer :-) </p>
   `,
   location: 'Pittsburgh, PA',
-  email: 'rnukunc[AT]andrew[]cmu[]edu',
+  email: 'runkunc[AT]andrew[]cmu[]edu',
   githubHandle: 'treefds',
   itchHandle: 'zenkfds',
+  // Replace with your personal LinkedIn profile URL.
+  linkedinUrl: 'https://linkedin.com/in/rkchen',
+  // An empty caption falls back to your name.
+  avatarCaption: 'Some photo I took',
 };
 
 export interface ResumeEntry {
@@ -76,10 +80,10 @@ export const resume: ResumeSection[] = [
         description:
           'A benchmark for evaluating LLM agents on game development tasks in a modern game engine, with 333 tasks. Co-author.',
         links: [
-          { label: 'Paper', url: 'https://arxiv.org/abs/2602.11103'},
-          { label: 'Code', url: 'https://github.com/waynchi/gamedevbench'},
-          { label: 'Page', url: 'https://waynechi.com/gamedevbench/'}
-        ]
+          { label: 'Paper', url: 'https://arxiv.org/abs/2602.11103' },
+          { label: 'Code', url: 'https://github.com/waynchi/gamedevbench' },
+          { label: 'Page', url: 'https://waynechi.com/gamedevbench/' },
+        ],
       },
       {
         date: '2025',
@@ -88,10 +92,16 @@ export const resume: ResumeSection[] = [
         description:
           'An LLM agent for ML-engineering tasks enhanced by MCTS-inspired tree-of-thought and inference-time augmentation. Co-author.',
         links: [
-          { label: 'Paper', url: 'https://arxiv.org/abs/2506.16499'},
-          { label: 'Code', url: 'https://github.com/sjtu-sai-agents/ML-Master/'},
-          { label: 'Page', url: 'https://sjtu-sai-agents.github.io/ML-Master/'}
-        ]
+          { label: 'Paper', url: 'https://arxiv.org/abs/2506.16499' },
+          {
+            label: 'Code',
+            url: 'https://github.com/sjtu-sai-agents/ML-Master/',
+          },
+          {
+            label: 'Page',
+            url: 'https://sjtu-sai-agents.github.io/ML-Master/',
+          },
+        ],
       },
     ],
   },
@@ -127,7 +137,7 @@ export const games: Game[] = [
   {
     id: 'ld55',
     number: '01',
-    title: 'A Wizard\'s Spring Hike',
+    title: "A Wizard's Spring Hike",
     genre: 'Developed for Ludam Dare Jam 55',
     year: '2024',
     palette: 'mint',
@@ -149,8 +159,16 @@ export const games: Game[] = [
       },
     ],
     links: [
-      { label: 'Visit itch.io', url: 'https://zenkfds.itch.io/spring-hike', icon: 'play' },
-      { label: 'Visit GitHub', url: 'https://github.com/treefds/WizardExpedition', icon: 'code' },
+      {
+        label: 'Visit itch.io',
+        url: 'https://zenkfds.itch.io/spring-hike',
+        icon: 'play',
+      },
+      {
+        label: 'Visit GitHub',
+        url: 'https://github.com/treefds/WizardExpedition',
+        icon: 'code',
+      },
     ],
   },
   {
@@ -178,7 +196,11 @@ export const games: Game[] = [
       },
     ],
     links: [
-      { label: 'Visit itch.io', url: 'https://zenkfds.itch.io/cafe', icon: 'play' }
+      {
+        label: 'Visit itch.io',
+        url: 'https://zenkfds.itch.io/cafe',
+        icon: 'play',
+      },
     ],
   },
   {
@@ -197,8 +219,7 @@ export const games: Game[] = [
       facing: 'right',
     },
 
-    description:
-      'You can find my many other games on itch.io!',
+    description: 'You can find my many other games on itch.io!',
     screenshots: [
       {
         asset: 'screenshots/ld56.png',
@@ -210,7 +231,7 @@ export const games: Game[] = [
       },
     ],
     links: [
-      { label: 'Visit itch.io', url: 'https://zenkfds.itch.io', icon: 'play' }
+      { label: 'Visit itch.io', url: 'https://zenkfds.itch.io', icon: 'play' },
     ],
   },
 ];
